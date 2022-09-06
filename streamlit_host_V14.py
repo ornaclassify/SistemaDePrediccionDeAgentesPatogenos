@@ -1,6 +1,6 @@
 import numpy as np
 import streamlit as st
-import tensorflow as tf
+from tensorflow import keras
 import pandas as pd
 import os,datetime
 from bd import *
@@ -17,7 +17,7 @@ st.title("Predicción de Agentes Patógenos")
 st.write("---")
 
 st.header("Predicción")
-model = tf.keras.models.load_model('modeloPatog3V14.h5')
+model = keras.models.load_model('modeloPatog3V14.h5')
 
 st.set_option('deprecation.showfileUploaderEncoding',False)
 uploaded_file = st.file_uploader("Elija una imágen del dispositivo", type=["jpg", "jpeg", "png"])
